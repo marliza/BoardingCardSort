@@ -1,0 +1,45 @@
+[{
+        "seatNo": "17 upper",
+        "transport": {
+            "type": "Train",
+            "number": "SK22"
+        },
+        "gate": "Platform 3",
+        "origin": "Margao",
+        "destination": "Vasco Railway Station",
+        "baggage_information": "Baggage will we automatically transferred from your last leg"
+    },
+    {
+        "seatNo": null,
+        "transport": {
+            "type": "Bus",
+            "number": "GA-T-2987"
+        },
+        "gate": null,
+        "origin": "Ponda",
+        "destination": "Panjim",
+        "baggage_information": "No information"
+    },
+    {
+        "seatNo": null,
+        "transport": {
+            "type": "Flight",
+            "number": "GR678"
+        },
+        "gate": "B5",
+        "origin": "Panjim",
+        "destination": "Margao",
+        "baggage_information": "Baggage at counter 6"
+    },
+    {
+        "seatNo": "45B",
+        "transport": {
+            "type": "Bus",
+            "number": "78A"
+        },
+        "gate": null,
+        "origin": "Vasco Railway Station",
+        "destination": "Canncona",
+        "baggage_information": null
+    }
+]

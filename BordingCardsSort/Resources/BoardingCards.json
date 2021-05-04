@@ -1,0 +1,46 @@
+[
+    {
+        "seatNo": "7B",
+        "transport": {
+            "type": "Flight",
+            "number": "SK22"
+        },
+        "gate": "22",
+        "origin": "London",
+        "destination": "New York JFK",
+        "baggage_information": "Baggage will we automatically transferred from your last leg"
+    },
+    {
+        "seatNo": "3A",
+        "transport": {
+            "type": "Flight",
+            "number": "SK455"
+        },
+        "gate": "45B",
+        "origin": "Girona Airport",
+        "destination": "London",
+        "baggage_information": "Baggage drop at ticket counter 344."
+    },
+    {
+        "seatNo": null,
+        "transport": {
+            "type": "Bus",
+            "number": "airport"
+        },
+        "gate": null,
+        "origin": "Barcelona",
+        "destination": "Girona Airport",
+        "baggage_information": null
+    },
+    {
+        "seatNo": "45B",
+        "transport": {
+            "type": "Train",
+            "number": "78A"
+        },
+        "gate": null,
+        "origin": "Madrid",
+        "destination": "Barcelona",
+        "baggage_information": null
+    }
+]
