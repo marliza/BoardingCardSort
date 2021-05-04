@@ -10,6 +10,8 @@
 		7F53873C2641BD7D0029F2BA /* BoardingCards2.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F53873B2641BD7D0029F2BA /* BoardingCards2.json */; };
 		7F5387402641D69D0029F2BA /* ContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53873F2641D69D0029F2BA /* ContentLoader.swift */; };
 		7F5387482641E9E80029F2BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5387472641E9E80029F2BA /* Constants.swift */; };
+		7F53874C2641FEC50029F2BA /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53874A2641FEC50029F2BA /* DescriptionCell.swift */; };
+		7F53874D2641FEC50029F2BA /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F53874B2641FEC50029F2BA /* DescriptionCell.xib */; };
 		7F83FB8726415A4800B58CD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83FB8626415A4800B58CD5 /* AppDelegate.swift */; };
 		7F83FB8926415A4800B58CD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83FB8826415A4800B58CD5 /* SceneDelegate.swift */; };
 		7F83FB8B26415A4800B58CD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83FB8A26415A4800B58CD5 /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 		7F53873B2641BD7D0029F2BA /* BoardingCards2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BoardingCards2.json; sourceTree = "<group>"; };
 		7F53873F2641D69D0029F2BA /* ContentLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLoader.swift; sourceTree = "<group>"; };
 		7F5387472641E9E80029F2BA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7F53874A2641FEC50029F2BA /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		7F53874B2641FEC50029F2BA /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
 		7F83FB8326415A4800B58CD5 /* BordingCardsSort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BordingCardsSort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F83FB8626415A4800B58CD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F83FB8826415A4800B58CD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		7F53874F2641FED70029F2BA /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7F83FB9E26415F3700B58CD5 /* BoardingCardCell.xib */,
+				7F83FBA126415F6500B58CD5 /* BoardingCardCell.swift */,
+				7F53874A2641FEC50029F2BA /* DescriptionCell.swift */,
+				7F53874B2641FEC50029F2BA /* DescriptionCell.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		7F83FB7A26415A4800B58CD5 = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +110,6 @@
 				7F83FBA426415F7F00B58CD5 /* Model */,
 				7F83FB9D26415EBC00B58CD5 /* Views */,
 				7F83FB9B26415EAC00B58CD5 /* Controllers */,
-				7F83FB8C26415A4800B58CD5 /* Main.storyboard */,
 				7F5387452641D7E70029F2BA /* Resources */,
 				7F83FB9126415A4A00B58CD5 /* LaunchScreen.storyboard */,
 				7F83FB9426415A4A00B58CD5 /* Info.plist */,
@@ -114,8 +128,8 @@
 		7F83FB9D26415EBC00B58CD5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7F83FB9E26415F3700B58CD5 /* BoardingCardCell.xib */,
-				7F83FBA126415F6500B58CD5 /* BoardingCardCell.swift */,
+				7F83FB8C26415A4800B58CD5 /* Main.storyboard */,
+				7F53874F2641FED70029F2BA /* CustomViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +204,7 @@
 				7F83FBA9264167BB00B58CD5 /* BoardingCards.json in Resources */,
 				7F53873C2641BD7D0029F2BA /* BoardingCards2.json in Resources */,
 				7F83FB9026415A4A00B58CD5 /* Assets.xcassets in Resources */,
+				7F53874D2641FEC50029F2BA /* DescriptionCell.xib in Resources */,
 				7F83FB8E26415A4800B58CD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +220,7 @@
 				7F83FBA226415F6500B58CD5 /* BoardingCardCell.swift in Sources */,
 				7F5387402641D69D0029F2BA /* ContentLoader.swift in Sources */,
 				7F83FB8726415A4800B58CD5 /* AppDelegate.swift in Sources */,
+				7F53874C2641FEC50029F2BA /* DescriptionCell.swift in Sources */,
 				7F5387482641E9E80029F2BA /* Constants.swift in Sources */,
 				7F83FBA626415FA100B58CD5 /* BoardingCard.swift in Sources */,
 				7F83FB8926415A4800B58CD5 /* SceneDelegate.swift in Sources */,

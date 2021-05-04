@@ -11,14 +11,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var spinnerView: UIActivityIndicatorView!
     
     var boardingCards: [BoardingCard] = []
+    var isSorted = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.dataSource = self
-        tableView.register(UINib(nibName: K.boardingCardCellNibName, bundle: nil), forCellReuseIdentifier: K.boardingCardCellIdentifier)
         
+        // register custom cells
+        tableView.register(UINib(nibName: K.boardingCardCellNibName, bundle: nil), forCellReuseIdentifier: K.boardingCardCellIdentifier)
+        tableView.register(UINib(nibName: K.descriptionCellNibName, bundle: nil), forCellReuseIdentifier: K.descriptionCellIdentifier)
+
         hideSpinner()
+        
         // load boarding card data from json file
         loadBoardingCards()
     }
@@ -28,6 +33,7 @@ class ViewController: UIViewController {
             return
         }
         if let sortedBoardingCards = sort(boardingCards){
+            isSorted = true
             boardingCards = sortedBoardingCards
             sender.setTitleColor(.white, for: .normal)
             sender.backgroundColor = .systemGreen
@@ -35,6 +41,28 @@ class ViewController: UIViewController {
             sender.isUserInteractionEnabled = false
         }
         tableView.reloadData()
+    }
+    
+    func createCardDescription(from boardingCard: BoardingCard, isStart: Bool) -> String{
+        var cardDescription = ""
+        var line1 = ""
+        var line2 = ""
+        let line3 = boardingCard.baggage_information ?? ""
+        
+        if isStart{
+            line1 = "Take \(boardingCard.transport.type) \(boardingCard.transport.number ?? "") from  \(boardingCard.origin) to \(boardingCard.destination). "
+        }else{
+            line1 = "From \(boardingCard.origin) take \(boardingCard.transport.type) \(boardingCard.transport.number ?? "") to \(boardingCard.destination). "
+        }
+        if let seatNo = boardingCard.seatNo{
+            line2 = "Sit in seat \(seatNo). "
+        }else{
+            line2 = "No seat assignment."
+        }
+        
+        cardDescription = line1 + line2 + line3
+        
+        return cardDescription
     }
     
     func showSpinner(){
@@ -69,7 +97,7 @@ class ViewController: UIViewController {
         
         self.hideSpinner()
         return sortedCards
-
+        
     }
     //MARK: - Fetch local data
     fileprivate func loadBoardingCards() {
@@ -83,21 +111,38 @@ class ViewController: UIViewController {
 //MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return boardingCards.count
+        if (!isSorted){
+            return boardingCards.count
+        }else{
+            return boardingCards.count + 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.boardingCardCellIdentifier, for: indexPath) as! BoardingCardCell
-        let card = boardingCards[indexPath.row]
-        cell.journeyName.text = "\(card.origin)  ->  \(boardingCards[indexPath.row].destination)"
-        cell.transportType.text = card.transport.type
-        cell.transportTypeNumber.text = card.transport.number
-        if (card.seatNo != nil){
-            cell.seatNo.text = card.seatNo
+        if !isSorted{
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.boardingCardCellIdentifier, for: indexPath) as! BoardingCardCell
+            let card = boardingCards[indexPath.row]
+            cell.journeyName.text = "\(card.origin)  ->  \(boardingCards[indexPath.row].destination)"
+            cell.transportType.text = card.transport.type
+            cell.transportTypeNumber.text = card.transport.number
+            if (card.seatNo != nil){
+                cell.seatNo.text = card.seatNo
+            }else{
+                cell.seatNo.text = " -- "
+            }
+            return cell
         }else{
-            cell.seatNo.text = " -- "
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.descriptionCellIdentifier, for: indexPath) as! DescriptionCell
+            cell.stepNo.text = "\(indexPath.row + 1)"
+            var desc = ""
+            if (indexPath.row == boardingCards.count){
+                desc = "You have arrived at your final destination."
+            }else {
+                desc = createCardDescription(from: boardingCards[indexPath.row], isStart: (indexPath.row == 0))
+            }
+            cell.descriptionLabel.text = desc
+            return cell
         }
-        return cell
     }
 }
 

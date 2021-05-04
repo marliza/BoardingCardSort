@@ -8,9 +8,13 @@
 import Foundation
 struct K{
     
-    //MARK: - Cell
+    //MARK: - Identifiers
     static let boardingCardCellIdentifier = "BoardingCardCell"
+    static let descriptionCellIdentifier = "DescriptionCell"
+    
+    //MARK: - Xib name
     static let boardingCardCellNibName = "BoardingCardCell"
+    static let descriptionCellNibName = "DescriptionCell"
     
     //MARK: - File names
     static let boardingCardsFile = "BoardingCards"
