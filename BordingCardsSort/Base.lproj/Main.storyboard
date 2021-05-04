@@ -24,9 +24,17 @@
                                     <action selector="sortBoardingCardsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V0G-Ef-aP7"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lYz-q4-IqH">
+                                <rect key="frame" x="188.5" y="110" width="37" height="37"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FGe-px-xCL">
-                                <rect key="frame" x="0.0" y="108" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="157" width="414" height="739"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Gsl-3s-Cxe">
+                                    <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoardingCardCell" id="2ip-j6-Jcv" customClass="BoardingCardCell" customModule="BordingCardsSort" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -42,16 +50,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FGe-px-xCL" firstAttribute="top" secondItem="AJ0-Bw-dfk" secondAttribute="bottom" constant="8" symbolic="YES" id="IyF-cU-BJC"/>
+                            <constraint firstItem="lYz-q4-IqH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="39X-WN-phv"/>
                             <constraint firstItem="FGe-px-xCL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MPz-qc-BLb"/>
                             <constraint firstAttribute="bottom" secondItem="FGe-px-xCL" secondAttribute="bottom" id="QII-sm-Kjw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AJ0-Bw-dfk" secondAttribute="trailing" constant="20" id="T0a-Xg-oT6"/>
                             <constraint firstItem="AJ0-Bw-dfk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VZD-Ed-PPe"/>
                             <constraint firstItem="FGe-px-xCL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VyC-nU-483"/>
                             <constraint firstItem="AJ0-Bw-dfk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="b2Q-DY-POk"/>
+                            <constraint firstItem="FGe-px-xCL" firstAttribute="top" secondItem="lYz-q4-IqH" secondAttribute="bottom" constant="10" id="ema-hF-YFY"/>
+                            <constraint firstItem="lYz-q4-IqH" firstAttribute="top" secondItem="AJ0-Bw-dfk" secondAttribute="bottom" constant="10" id="lFO-2v-g2Q"/>
+                            <constraint firstItem="FGe-px-xCL" firstAttribute="top" secondItem="AJ0-Bw-dfk" secondAttribute="bottom" constant="57" id="mHZ-2e-cN6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="spinnerView" destination="lYz-q4-IqH" id="5Ic-zz-dj8"/>
                         <outlet property="tableView" destination="FGe-px-xCL" id="2Uj-4l-Rkz"/>
                     </connections>
                 </viewController>

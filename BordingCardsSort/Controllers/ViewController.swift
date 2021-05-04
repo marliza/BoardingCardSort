@@ -8,9 +8,9 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinnerView: UIActivityIndicatorView!
     
     var boardingCards: [BoardingCard] = []
-    var isSorting = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         tableView.register(UINib(nibName: K.boardingCardCellNibName, bundle: nil), forCellReuseIdentifier: K.boardingCardCellIdentifier)
         
+        hideSpinner()
         // load boarding card data from json file
         loadBoardingCards()
     }
@@ -35,10 +36,17 @@ class ViewController: UIViewController {
         }
         tableView.reloadData()
     }
+    
+    func showSpinner(){
+        spinnerView.startAnimating()
+    }
+    
+    func hideSpinner(){
+        spinnerView.stopAnimating()
+    }
     //MARK: - Sort
     func sort(_ boardingCards: [BoardingCard]) -> [BoardingCard]?{
-        isSorting = true
-        
+        showSpinner()
         var startCard: BoardingCard?
         var sortedCards = [BoardingCard]()
         
@@ -59,8 +67,9 @@ class ViewController: UIViewController {
             startCard = results[0]
         }
         
-        isSorting = false
+        self.hideSpinner()
         return sortedCards
+
     }
     //MARK: - Fetch local data
     fileprivate func loadBoardingCards() {
