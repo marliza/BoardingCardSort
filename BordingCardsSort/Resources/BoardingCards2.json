@@ -1,24 +1,24 @@
 [{
-        "seatNo": "17 upper",
-        "transport": {
-            "type": "Train",
-            "number": "SK22"
-        },
-        "gate": "Platform 3",
-        "origin": "Margao",
-        "destination": "Vasco Railway Station",
-        "baggage_information": "Baggage will we automatically transferred from your last leg"
-    },
-    {
         "seatNo": null,
         "transport": {
             "type": "Bus",
-            "number": "GA-T-2987"
+            "number": "GA-2-2343"
         },
         "gate": null,
-        "origin": "Ponda",
+        "origin": "Vasco Railway Station",
         "destination": "Panjim",
-        "baggage_information": "No information"
+        "baggage_information": null
+    },
+    {
+        "seatNo": "20C",
+        "transport": {
+            "type": "Flight",
+            "number": "BT456"
+        },
+        "gate": "HT9",
+        "origin": "Delhi International Airport",
+        "destination": "Bombay Domestic Airport",
+        "baggage_information": "Baggage will we automatically transferred from your last leg"
     },
     {
         "seatNo": null,
@@ -26,20 +26,20 @@
             "type": "Flight",
             "number": "GR678"
         },
-        "gate": "B5",
-        "origin": "Panjim",
-        "destination": "Margao",
+        "gate": "WL5",
+        "origin": "London Heathrow Airport",
+        "destination": "Delhi International Airport",
         "baggage_information": "Baggage at counter 6"
     },
     {
-        "seatNo": "45B",
+        "seatNo": "Upper B5",
         "transport": {
-            "type": "Bus",
-            "number": "78A"
+            "type": "Train",
+            "number": null
         },
         "gate": null,
-        "origin": "Vasco Railway Station",
-        "destination": "Canncona",
+        "origin": "Bombay Domestic Airport",
+        "destination": "Vasco Railway Station",
         "baggage_information": null
     }
 ]
