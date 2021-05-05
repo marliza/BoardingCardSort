@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         if let seatNo = boardingCard.seatNo{
             line2 = "Sit in seat \(seatNo). "
         }else{
-            line2 = "No seat assignment."
+            line2 = "No seat assignment. "
         }
         
         cardDescription = line1 + line2 + line3
@@ -122,7 +122,8 @@ extension ViewController: UITableViewDataSource{
         if !isSorted{
             let cell = tableView.dequeueReusableCell(withIdentifier: K.boardingCardCellIdentifier, for: indexPath) as! BoardingCardCell
             let card = boardingCards[indexPath.row]
-            cell.journeyName.text = "\(card.origin)  ->  \(boardingCards[indexPath.row].destination)"
+            cell.originLabel.text = "\(card.origin)"
+            cell.destinationLabel.text = "\(boardingCards[indexPath.row].destination)"
             cell.transportType.text = card.transport.type
             cell.transportTypeNumber.text = card.transport.number
             if (card.seatNo != nil){

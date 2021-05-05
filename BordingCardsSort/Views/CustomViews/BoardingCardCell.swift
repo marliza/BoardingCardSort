@@ -8,7 +8,8 @@
 import UIKit
 
 class BoardingCardCell: UITableViewCell {
-    @IBOutlet weak var journeyName: UILabel!
+    @IBOutlet weak var originLabel: UILabel!
+    @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var transportType: UILabel!
     @IBOutlet weak var seatNo: UILabel!
     @IBOutlet weak var transportTypeNumber: UILabel!

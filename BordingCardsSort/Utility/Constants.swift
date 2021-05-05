@@ -17,7 +17,7 @@ struct K{
     static let descriptionCellNibName = "DescriptionCell"
     
     //MARK: - File names
-    static let boardingCardsFile = "BoardingCards"
+    static let boardingCardsFile = "BoardingCards2"
     
     //MARK: - Strings
     static let sortedButtonTitle = "Sorted Boarding Cards"
